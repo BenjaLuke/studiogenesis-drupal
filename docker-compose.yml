@@ -1,0 +1,55 @@
+services:
+  app:
+    # Custom PHP + Apache image prepared with the PHP extensions Drupal needs.
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: estudiogenesis_drupal_app
+    depends_on:
+      - db
+    ports:
+      # Drupal will be available at http://localhost:8081 by default.
+      - "${DRUPAL_PORT:-8081}:80"
+    volumes:
+      # The full project is mounted inside the container so code changes are immediate.
+      - ./:/var/www/html
+    environment:
+      # These values will be used later when installing Drupal.
+      DRUPAL_DB_HOST: db
+      DRUPAL_DB_NAME: ${MYSQL_DATABASE:-studiogenesis_drupal}
+      DRUPAL_DB_USER: ${MYSQL_USER:-drupal}
+      DRUPAL_DB_PASSWORD: ${MYSQL_PASSWORD:-drupal}
+
+  db:
+    # MySQL is required by the technical test.
+    image: mysql:8.4
+    container_name: estudiogenesis_drupal_db
+    ports:
+      # Exposing MySQL is useful for external database tools and for learning/debugging.
+      - "${MYSQL_PORT:-3308}:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-studiogenesis_drupal}
+      MYSQL_USER: ${MYSQL_USER:-drupal}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-drupal}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+    volumes:
+      # Named volume: keeps database data even if the container is recreated.
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    # Browser-based database manager for local development.
+    image: phpmyadmin:5-apache
+    container_name: estudiogenesis_drupal_phpmyadmin
+    depends_on:
+      - db
+    ports:
+      # phpMyAdmin will be available at http://localhost:8082 by default.
+      - "${PHPMYADMIN_PORT:-8082}:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 64M
+
+volumes:
+  # Docker-managed volume for MySQL persistence.
+  db_data:

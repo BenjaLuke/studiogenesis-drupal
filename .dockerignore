@@ -1,0 +1,25 @@
+# Git history is not needed inside the Docker build context.
+.git
+.gitignore
+.gitattributes
+
+# Local environment values should stay on the host machine.
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated Drupal files can be large and are mounted at runtime.
+vendor/
+web/sites/*/files/
+web/sites/*/private/
+
+# Local editor and operating system files.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Delivery artifacts do not belong in the Docker image context.
+database/*.sql
+docs/screenshots/
