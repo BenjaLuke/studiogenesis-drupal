@@ -1,0 +1,17 @@
+# Normalizacion de configuracion de editor para Drupal.
+# @see http://editorconfig.org/
+
+# Este es el .editorconfig principal; no se buscan configuraciones en carpetas superiores.
+root = true
+
+# Reglas generales para todos los archivos.
+[*]
+end_of_line = LF
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[composer.{json,lock}]
+indent_size = 4

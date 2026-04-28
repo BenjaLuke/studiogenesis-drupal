@@ -24,6 +24,7 @@ Crear una web Drupal con gestion de noticias, productos y newsletter, incluyendo
 docs/      Documentacion, capturas e informe final.
 database/  Exportaciones de base de datos para la entrega.
 docker/    Configuracion auxiliar del entorno Docker.
+recipes/   Recetas Drupal generadas por la plantilla oficial.
 web/       Document root publico de Drupal.
 ```
 
@@ -52,6 +53,34 @@ docker compose logs app
 docker compose down
 ```
 
+## Drupal y Composer
+
+Drupal se instala mediante Composer usando la plantilla oficial `drupal/recommended-project`.
+Esto permite reproducir dependencias y mantener el core separado de los archivos publicos.
+
+Versiones verificadas en el entorno local:
+
+- Drupal: `11.3.8`
+- PHP: `8.3.30`
+- Composer: `2.9.7`
+- Drush: `13.7.2`
+
+Comandos utiles dentro del contenedor:
+
+```powershell
+docker compose exec app composer install
+docker compose exec app vendor/bin/drush status
+docker compose exec app vendor/bin/drush cache:rebuild
+```
+
+Instalacion local de Drupal con Drush:
+
+```powershell
+docker compose exec app vendor/bin/drush site:install standard --db-url=mysql://drupal:drupal@db:3306/studiogenesis_drupal --site-name="Studiogenesis Drupal" --account-name=admin --account-pass="<contrasena-local>" --account-mail=admin@example.com -y
+```
+
+El archivo `web/sites/default/settings.php` y la carpeta `web/sites/default/files/` se generan en local y no se versionan porque contienen configuracion del entorno y archivos generados por Drupal.
+
 Credenciales locales de base de datos:
 
 ```text
@@ -65,4 +94,4 @@ Root password: root
 
 ## Estado
 
-Fase actual: entorno Docker inicial preparado y verificado.
+Fase actual: Drupal 11 instalado y conectado a MySQL en entorno Docker local.

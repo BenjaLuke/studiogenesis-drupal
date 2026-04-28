@@ -18,9 +18,19 @@ Desktop.ini
 /vendor/
 composer.lock.bak
 
+# Dependencias de Drupal gestionadas por Composer.
+# El codigo propio ira en modules/custom y themes/custom, que si se versionan.
+/web/core/
+/web/libraries/
+/web/modules/contrib/
+/web/profiles/contrib/
+/web/themes/contrib/
+
 # Drupal generated files
 /web/sites/*/files/
 /web/sites/*/private/
+/web/sites/*/settings.php
+/web/sites/*/services.yml
 /web/sites/*/settings.local.php
 /web/sites/*/services.local.yml
 /web/sites/*/phpunit.xml

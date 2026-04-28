@@ -1,25 +1,30 @@
-# Git history is not needed inside the Docker build context.
+# El historial de Git no hace falta dentro del contexto de construccion Docker.
 .git
 .gitignore
 .gitattributes
 
-# Local environment values should stay on the host machine.
+# Los valores locales de entorno deben quedarse en la maquina anfitriona.
 .env
 .env.*
 !.env.example
 
-# Dependencies and generated Drupal files can be large and are mounted at runtime.
+# Las dependencias de Composer y Drupal pueden ser grandes y se montan en ejecucion.
 vendor/
+web/core/
+web/libraries/
+web/modules/contrib/
+web/profiles/contrib/
+web/themes/contrib/
 web/sites/*/files/
 web/sites/*/private/
 
-# Local editor and operating system files.
+# Archivos locales del editor y del sistema operativo.
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# Delivery artifacts do not belong in the Docker image context.
+# Los artefactos de entrega no deben formar parte del contexto de imagen Docker.
 database/*.sql
 docs/screenshots/

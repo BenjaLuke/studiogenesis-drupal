@@ -1,12 +1,63 @@
-* text=auto
+# Normalizacion de Git para Drupal.
+# @see https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+# @see https://www.drupal.org/node/1542048
 
-*.sh text eol=lf
-*.yml text eol=lf
-*.yaml text eol=lf
-*.json text eol=lf
-*.php text eol=lf
-*.module text eol=lf
-*.theme text eol=lf
-*.twig text eol=lf
-*.css text eol=lf
-*.js text eol=lf
+# Normalmente estas reglas se podrian definir con macros para mejorar lectura y mantenimiento.
+# Drupal las declara de forma explicita para que funcionen aunque el proyecto cambie de ubicacion.
+
+# Atributos para archivos de texto.
+# - Se tratan como texto.
+# - Se fuerzan finales de linea LF para evitar ruido entre Windows y Linux.
+# - Se detectan errores de espacios en blanco.
+#   - Git los muestra por defecto en `git diff --color`.
+#   - Se pueden validar con `git diff --check`.
+#   - Se pueden rechazar al aplicar parches con `git apply --whitespace=error-all`.
+#   - Se pueden corregir automaticamente con `git apply --whitespace=fix`.
+
+*.config  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.css     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.dist    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.engine  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.html    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=html
+*.inc     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.install text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.js      text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.json    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.lock    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.map     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.md      text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.module  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.php     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.po      text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.profile text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.script  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.sh      text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.sql     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.svg     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.theme   text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php linguist-language=php
+*.twig    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.txt     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.xml     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.yml     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+
+# El baseline de PHPStan usa tabuladores en lugar de espacios.
+core/.phpstan-baseline.php text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tabwidth=2 diff=php linguist-language=php
+
+# Atributos para archivos binarios.
+# - No se tratan como texto.
+# - Se incluye diff binario en parches en lugar de marcar solo que son binarios.
+*.avif    -text diff
+*.eot     -text diff
+*.exe     -text diff
+*.gif     -text diff
+*.gz      -text diff
+*.ico     -text diff
+*.jpeg    -text diff
+*.jpg     -text diff
+*.otf     -text diff
+*.phar    -text diff
+*.png     -text diff
+*.svgz    -text diff
+*.ttf     -text diff
+*.woff    -text diff
+*.woff2   -text diff

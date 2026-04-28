@@ -1,8 +1,8 @@
-# PHP 8.3 with Apache gives us a classic Drupal-friendly runtime.
+# PHP 8.3 con Apache nos da un entorno clasico y compatible con Drupal.
 FROM php:8.3-apache
 
-# Install system libraries required by common Drupal PHP extensions.
-# Each package supports a concrete extension installed below.
+# Instalamos librerias del sistema necesarias para extensiones PHP habituales en Drupal.
+# Cada paquete da soporte a alguna de las extensiones que se instalan debajo.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
@@ -22,14 +22,14 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Enable Apache rewrite rules, required by Drupal clean URLs.
+# Activamos rewrite en Apache, necesario para las URLs limpias de Drupal.
 RUN a2enmod rewrite
 
-# Use a Drupal-specific Apache virtual host with /web as the document root.
+# Usamos un virtual host especifico para Drupal con /web como raiz publica.
 COPY docker/php/apache-drupal.conf /etc/apache2/sites-available/000-default.conf
 
-# Composer will be used in the next phase to install Drupal and dependencies.
+# Composer se usa para instalar Drupal y sus dependencias de forma reproducible.
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
-# The project root is mounted here by Docker Compose.
+# Docker Compose monta aqui la raiz del proyecto.
 WORKDIR /var/www/html
