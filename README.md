@@ -76,10 +76,29 @@ docker compose exec app vendor/bin/drush cache:rebuild
 Instalacion local de Drupal con Drush:
 
 ```powershell
-docker compose exec app vendor/bin/drush site:install standard --db-url=mysql://drupal:drupal@db:3306/studiogenesis_drupal --site-name="Studiogenesis Drupal" --account-name=admin --account-pass="<contrasena-local>" --account-mail=admin@example.com -y
+docker compose exec --user www-data app vendor/bin/drush site:install standard --db-url=mysql://drupal:drupal@db:3306/studiogenesis_drupal --site-name="Studiogenesis Drupal" --account-name=admin --account-pass="<contrasena-local>" --account-mail=admin@example.com -y
 ```
 
 El archivo `web/sites/default/settings.php` y la carpeta `web/sites/default/files/` se generan en local y no se versionan porque contienen configuracion del entorno y archivos generados por Drupal.
+
+Si Drupal no puede importar traducciones o guardar archivos generados, revisar permisos de la carpeta publica de archivos:
+
+```powershell
+docker compose exec app mkdir -p web/sites/default/files/translations
+docker compose exec app chown -R www-data:www-data web/sites/default/files
+```
+
+## Configuracion basica realizada
+
+- Idioma predeterminado: espanol.
+- Pais predeterminado: Espana.
+- Zona horaria: `Europe/Madrid`.
+- Nombre del sitio: `Studiogenesis Drupal`.
+- Slogan: `Noticias, productos y newsletter`.
+- Tema publico provisional: Olivero.
+- Tema de administracion: Claro.
+- Modulos base revisados: campos, ficheros, imagenes, taxonomias, buscador, vistas y menus.
+- Modulos multimedia activados: Media y Media Library.
 
 Credenciales locales de base de datos:
 
@@ -94,4 +113,4 @@ Root password: root
 
 ## Estado
 
-Fase actual: Drupal 11 instalado y conectado a MySQL en entorno Docker local.
+Fase actual: Drupal 11 instalado, conectado a MySQL y configurado en castellano.
