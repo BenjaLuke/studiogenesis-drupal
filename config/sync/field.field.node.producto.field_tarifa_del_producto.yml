@@ -1,0 +1,23 @@
+uuid: 41b80f36-f4ce-4bac-abb1-cbc24c06ea1b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tarifa_del_producto
+    - node.type.producto
+id: node.producto.field_tarifa_del_producto
+field_name: field_tarifa_del_producto
+entity_type: node
+bundle: producto
+label: 'Tarifa del producto'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: €
+field_type: decimal

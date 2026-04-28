@@ -1,0 +1,9 @@
+uuid: 731a80d9-4669-424b-aa88-9e61b6aac606
+langcode: es
+status: true
+dependencies: {  }
+name: 'Categorías de noticias'
+vid: categorias_de_noticias
+description: 'Clasifica temática de las noticias publicadas en la web'
+weight: 0
+new_revision: false

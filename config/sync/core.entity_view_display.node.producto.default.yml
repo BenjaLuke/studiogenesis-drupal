@@ -1,0 +1,68 @@
+uuid: cf4e9ebf-fd99-492e-95ed-2aea30e2d37f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.producto.field_categoria_de_producto
+    - field.field.node.producto.field_descripcion_corta
+    - field.field.node.producto.field_descripcion_larga
+    - field.field.node.producto.field_foto_del_producto
+    - field.field.node.producto.field_tarifa_del_producto
+    - node.type.producto
+  module:
+    - text
+    - user
+id: node.producto.default
+targetEntityType: node
+bundle: producto
+mode: default
+content:
+  field_categoria_de_producto:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_descripcion_corta:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descripcion_larga:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_foto_del_producto:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tarifa_del_producto:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  langcode: true

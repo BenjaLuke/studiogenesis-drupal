@@ -1,0 +1,18 @@
+uuid: bed42909-8bf0-42be-a3f1-a7b76c8c6df0
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Noticia
+type: noticia
+description: 'Contenido informativo publicado en la sección de noticias'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

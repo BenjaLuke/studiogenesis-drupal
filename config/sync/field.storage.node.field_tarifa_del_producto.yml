@@ -1,0 +1,20 @@
+uuid: 3a17d686-3c5e-49ab-a82e-902f2b52452e
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tarifa_del_producto
+field_name: field_tarifa_del_producto
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 381f6558-cd18-48fa-babd-2d5958b2cb52
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_corta
+    - node.type.producto
+id: node.producto.field_descripcion_corta
+field_name: field_descripcion_corta
+entity_type: node
+bundle: producto
+label: 'Descripción corta'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

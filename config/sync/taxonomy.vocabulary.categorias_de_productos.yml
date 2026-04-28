@@ -1,0 +1,9 @@
+uuid: ea7f7c8b-311d-403f-8303-6438ed847702
+langcode: es
+status: true
+dependencies: {  }
+name: 'Categorías de productos'
+vid: categorias_de_productos
+description: 'Clasificación comercial de los productos disponibles en la web'
+weight: 0
+new_revision: false

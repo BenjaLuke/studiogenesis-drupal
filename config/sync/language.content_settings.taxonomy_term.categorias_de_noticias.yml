@@ -1,0 +1,11 @@
+uuid: 377f83c1-2c27-4af1-a9f3-a5072d597de2
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categorias_de_noticias
+id: taxonomy_term.categorias_de_noticias
+target_entity_type_id: taxonomy_term
+target_bundle: categorias_de_noticias
+default_langcode: site_default
+language_alterable: false

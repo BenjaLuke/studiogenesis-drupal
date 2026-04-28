@@ -1,0 +1,29 @@
+uuid: 966e1e8c-0d0f-4259-87c5-7fefdc58cce1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria_de_producto
+    - node.type.producto
+    - taxonomy.vocabulary.categorias_de_productos
+id: node.producto.field_categoria_de_producto
+field_name: field_categoria_de_producto
+entity_type: node
+bundle: producto
+label: 'Categorías de producto'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categorias_de_productos: categorias_de_productos
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

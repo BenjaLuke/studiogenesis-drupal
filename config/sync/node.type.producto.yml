@@ -1,0 +1,18 @@
+uuid: 89b382eb-b5a8-4a58-84c1-c7cefec06828
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Producto
+type: producto
+description: 'Contenido comercial para mostrar productos con imágenes, descripciones y tarifas.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

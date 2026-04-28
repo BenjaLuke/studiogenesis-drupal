@@ -1,0 +1,29 @@
+uuid: da0b04b4-577e-48ce-84ff-68f215077f4c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_foto_del_producto
+    - media.type.image
+    - node.type.producto
+id: node.producto.field_foto_del_producto
+field_name: field_foto_del_producto
+entity_type: node
+bundle: producto
+label: 'Foto del producto'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

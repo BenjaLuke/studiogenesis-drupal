@@ -71,6 +71,7 @@ Comandos utiles dentro del contenedor:
 docker compose exec app composer install
 docker compose exec app vendor/bin/drush status
 docker compose exec app vendor/bin/drush cache:rebuild
+docker compose exec app vendor/bin/drush config:export --destination=../config/sync -y
 ```
 
 Instalacion local de Drupal con Drush:
@@ -80,6 +81,8 @@ docker compose exec --user www-data app vendor/bin/drush site:install standard -
 ```
 
 El archivo `web/sites/default/settings.php` y la carpeta `web/sites/default/files/` se generan en local y no se versionan porque contienen configuracion del entorno y archivos generados por Drupal.
+
+La configuracion estructural de Drupal se exporta en `config/sync`. Ahi quedan versionados vocabularios, tipos de contenido, campos, formularios, presentaciones y modulos activos.
 
 Si Drupal no puede importar traducciones o guardar archivos generados, revisar permisos de la carpeta publica de archivos:
 
@@ -113,4 +116,4 @@ Root password: root
 
 ## Estado
 
-Fase actual: Drupal 11 instalado, conectado a MySQL y configurado en castellano.
+Fase actual: modelo de datos de noticias y productos creado y exportado a configuracion.

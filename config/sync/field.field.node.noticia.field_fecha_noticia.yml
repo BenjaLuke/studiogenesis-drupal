@@ -1,0 +1,21 @@
+uuid: 61494380-a866-4711-aeb7-efd19f89aaff
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_noticia
+    - node.type.noticia
+  module:
+    - datetime
+id: node.noticia.field_fecha_noticia
+field_name: field_fecha_noticia
+entity_type: node
+bundle: noticia
+label: 'Fecha noticia'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

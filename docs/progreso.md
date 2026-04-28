@@ -48,3 +48,13 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - Se revisaron modulos base necesarios para el proyecto.
 - Se activaron Media y Media Library para gestionar imagenes y ficheros de forma mas comoda.
 - Se resolvio un problema de permisos en `web/sites/default/files` que impedia importar traducciones.
+
+## Punto 7 - Modelo de datos
+
+- Se crearon los vocabularios `Categorías de noticias` y `Categorías de productos`.
+- Se anadieron terminos iniciales para probar filtros y listados.
+- Se creo el tipo de contenido `Noticia` con fecha, subtitulo, categoria, cuerpo, autor y ficheros relacionados.
+- Se creo el tipo de contenido `Producto` con categoria, descripcion corta, descripcion larga, foto y tarifa.
+- Se reviso la presentacion del formulario para ordenar los campos de edicion.
+- Se reviso la presentacion publica inicial de ambos tipos de contenido.
+- Se exporto la configuracion Drupal a `config/sync` para versionar el modelo en Git.

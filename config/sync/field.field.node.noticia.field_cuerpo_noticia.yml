@@ -1,0 +1,26 @@
+uuid: 6bdca33d-c846-48bb-b0c5-6b99a3e8bf48
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cuerpo_noticia
+    - filter.format.basic_html
+    - node.type.noticia
+  module:
+    - text
+id: node.noticia.field_cuerpo_noticia
+field_name: field_cuerpo_noticia
+entity_type: node
+bundle: noticia
+label: 'Cuerpo noticia'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+field_type: text_with_summary

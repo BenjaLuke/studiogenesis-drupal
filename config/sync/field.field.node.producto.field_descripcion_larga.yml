@@ -1,0 +1,22 @@
+uuid: e87a8968-c668-440c-b8b6-c3ff021c5287
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_larga
+    - node.type.producto
+  module:
+    - text
+id: node.producto.field_descripcion_larga
+field_name: field_descripcion_larga
+entity_type: node
+bundle: producto
+label: 'Descripción larga'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
