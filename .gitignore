@@ -1,0 +1,47 @@
+# Operating system
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor/
+composer.lock.bak
+
+# Drupal generated files
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+/web/sites/*/phpunit.xml
+
+# Drupal temporary and backup files
+*.orig
+*.rej
+*.bak
+*.tmp
+
+# Logs and cache
+*.log
+.cache/
+
+# Docker local overrides
+docker-compose.override.yml
+
+# Test and coverage output
+/coverage/
+/.phpunit.result.cache
+
+# Local database tool files
+*.sqlite
+*.sqlite3
