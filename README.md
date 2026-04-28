@@ -2,6 +2,8 @@
 
 Proyecto de prueba tecnica para desarrollador web basado en Drupal.
 
+Repositorio publico: <https://github.com/BenjaLuke/studiogenesis-drupal>
+
 ## Objetivo
 
 Crear una web Drupal con gestion de noticias, productos y newsletter, incluyendo parte publica, administracion interna, tema personalizado con Bootstrap 4 y documentacion de entrega.
