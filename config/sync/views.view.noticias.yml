@@ -467,8 +467,8 @@ display:
           exposed: true
           expose:
             operator_id: field_categoria_de_noticia_target_id_op
-            label: 'Categoría de noticia (field_categoria_de_noticia)'
-            description: ''
+            label: Categoría
+            description: Buscar
             use_operator: false
             operator: field_categoria_de_noticia_target_id_op
             operator_limit_selection: false

@@ -1,0 +1,15 @@
+global:
+  version: 1.x
+  css:
+    base:
+      # Bootstrap 4 se sirve desde el propio proyecto para no depender de CDN.
+      vendor/bootstrap/css/bootstrap.min.css: { minified: true }
+    theme:
+      # Estilos propios del tema, aplicados encima de Bootstrap.
+      css/styles.css: {}
+  js:
+    # Bootstrap bundle incluye Popper; jQuery lo aporta Drupal como dependencia.
+    vendor/bootstrap/js/bootstrap.bundle.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupal

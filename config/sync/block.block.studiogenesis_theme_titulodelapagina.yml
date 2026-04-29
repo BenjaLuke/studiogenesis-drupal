@@ -1,0 +1,18 @@
+uuid: aa7732a2-f4ce-488f-b935-5263005045e0
+langcode: es
+status: true
+dependencies:
+  theme:
+    - studiogenesis_theme
+id: studiogenesis_theme_titulodelapagina
+theme: studiogenesis_theme
+region: content
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  label_display: '0'
+  provider: core
+visibility: {  }

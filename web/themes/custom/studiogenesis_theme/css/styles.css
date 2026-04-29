@@ -1,0 +1,330 @@
+/*
+ * Estilos principales del tema Studiogenesis.
+ *
+ * Bootstrap aporta la base responsive y de componentes. Este archivo define la
+ * identidad visual del proyecto y adapta el marcado que Drupal genera por defecto.
+ */
+
+:root {
+  --sg-ink: #1f2933;
+  --sg-muted: #637381;
+  --sg-border: #d9e2ec;
+  --sg-surface: #ffffff;
+  --sg-soft: #f6f8fb;
+  --sg-primary: #4f9fc5;
+  --sg-primary-dark: #2f7899;
+  --sg-accent: #1d6f94;
+}
+
+body {
+  background: var(--sg-soft);
+  color: var(--sg-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--sg-primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--sg-primary-dark);
+}
+
+/* Cabecera y navegacion principal del sitio. */
+.site-header {
+  background: var(--sg-surface);
+  border-bottom: 1px solid var(--sg-border);
+}
+
+.site-header__inner {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0.75rem 0;
+}
+
+.site-header__brand .site-name,
+.site-header__brand .site-name a {
+  color: var(--sg-ink);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  text-decoration: none;
+}
+
+.site-header__brand .site-slogan {
+  color: var(--sg-muted);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+}
+
+.site-header__nav .menu {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav .menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav a {
+  border-radius: 0.25rem;
+  color: var(--sg-ink);
+  display: inline-flex;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  text-decoration: none;
+}
+
+.site-header__nav a:hover,
+.site-header__nav a:focus,
+.site-header__nav a.is-active {
+  background: rgba(79, 159, 197, 0.14);
+  color: var(--sg-primary-dark);
+}
+
+/* Estructura general de contenido. */
+.site-main {
+  padding: 2rem 0 3rem;
+}
+
+.site-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.site-content,
+.site-sidebar {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(31, 41, 51, 0.06);
+  overflow: hidden;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Mancha decorativa de fondo para dar identidad sin dificultar la lectura. */
+.site-content::before {
+  background:
+    radial-gradient(ellipse at 35% 25%, rgba(79, 159, 197, 0.34), transparent 34%),
+    radial-gradient(ellipse at 70% 38%, rgba(47, 120, 153, 0.24), transparent 36%),
+    radial-gradient(ellipse at 45% 78%, rgba(114, 190, 221, 0.26), transparent 42%);
+  border-radius: 48% 52% 61% 39% / 42% 46% 54% 58%;
+  content: '';
+  filter: blur(2px);
+  height: 760px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 48%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  width: 1050px;
+  z-index: 0;
+}
+
+
+/* El contenido queda por encima de la mancha decorativa. */
+.site-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.site-content {
+  min-width: 0;
+}
+
+.site-content h1,
+.site-content h2,
+.site-content h3 {
+  color: var(--sg-ink);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.site-content h1 {
+  font-size: 2rem;
+}
+
+/* Formularios de Drupal y del modulo newsletter. */
+.form-item {
+  margin-bottom: 1rem;
+}
+
+.form-item label {
+  color: var(--sg-ink);
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+input.form-text,
+input.form-email,
+input.form-number,
+input.form-date,
+textarea,
+select {
+  border: 1px solid var(--sg-border);
+  border-radius: 0.25rem;
+  max-width: 100%;
+  min-height: 42px;
+  padding: 0.5rem 0.65rem;
+  width: 100%;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+.button,
+input[type='submit'],
+.form-submit {
+  background: var(--sg-primary);
+  border: 1px solid var(--sg-primary);
+  border-radius: 0.25rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus,
+input[type='submit']:hover,
+input[type='submit']:focus,
+.form-submit:hover,
+.form-submit:focus {
+  background: var(--sg-primary-dark);
+  border-color: var(--sg-primary-dark);
+  color: #ffffff;
+}
+
+/* Tablas de Views y del listado administrativo de newsletter. */
+table {
+  background: rgba(255, 255, 255, 0.9);
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--sg-border);
+  padding: 0.8rem;
+  vertical-align: top;
+}
+
+th {
+  background: #edf7fb;
+  color: var(--sg-ink);
+  font-weight: 700;
+}
+
+tr:hover td {
+  background: #fbf7f2;
+}
+
+.views-exposed-form {
+  background: rgba(237, 247, 251, 0.88);
+  border: 1px solid rgba(79, 159, 197, 0.28);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.views-exposed-form .form--inline {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.views-exposed-form .form-item {
+  margin-bottom: 0;
+  min-width: 220px;
+}
+
+/* Mensajes de sistema y elementos auxiliares. */
+.messages {
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.site-breadcrumb,
+.site-highlighted,
+.site-help {
+  margin-bottom: 1rem;
+}
+
+.site-footer {
+  background: var(--sg-ink);
+  color: #ffffff;
+  padding: 1.5rem 0;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .site-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-layout:has(.site-sidebar--first) {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  .site-layout:has(.site-sidebar--second) {
+    grid-template-columns: minmax(0, 1fr) 260px;
+  }
+
+  .site-layout:has(.site-sidebar--first):has(.site-sidebar--second) {
+    grid-template-columns: 240px minmax(0, 1fr) 240px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-header__nav .menu {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .site-header__nav,
+  .site-header__nav a {
+    width: 100%;
+  }
+
+  .site-content,
+  .site-sidebar {
+    padding: 1rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

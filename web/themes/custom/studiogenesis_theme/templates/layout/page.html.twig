@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Plantilla principal del tema Studiogenesis.
+ *
+ * Organiza las regiones de Drupal en una estructura Bootstrap sencilla:
+ * cabecera, menu, contenido principal, barras laterales opcionales y pie.
+ */
+#}
+<div class="site-wrapper">
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        {% if page.header %}
+          <div class="site-header__brand">
+            {{ page.header }}
+          </div>
+        {% endif %}
+
+        {% if page.primary_menu %}
+          <nav class="site-header__nav" aria-label="{{ 'Menu principal'|t }}">
+            {{ page.primary_menu }}
+          </nav>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  {% if page.secondary_menu %}
+    <div class="site-secondary-menu">
+      <div class="container">
+        {{ page.secondary_menu }}
+      </div>
+    </div>
+  {% endif %}
+
+  <main class="site-main" role="main">
+    <a id="main-content" tabindex="-1"></a>
+
+    <div class="container">
+      {% if page.breadcrumb %}
+        <div class="site-breadcrumb">
+          {{ page.breadcrumb }}
+        </div>
+      {% endif %}
+
+      {% if page.highlighted %}
+        <div class="site-highlighted">
+          {{ page.highlighted }}
+        </div>
+      {% endif %}
+
+      {% if page.help %}
+        <div class="site-help">
+          {{ page.help }}
+        </div>
+      {% endif %}
+
+      <div class="site-layout">
+        {% if page.sidebar_first %}
+          <aside class="site-sidebar site-sidebar--first" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        {% endif %}
+
+        <section class="site-content">
+          {{ page.content }}
+        </section>
+
+        {% if page.sidebar_second %}
+          <aside class="site-sidebar site-sidebar--second" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  {% if page.footer %}
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        {{ page.footer }}
+      </div>
+    </footer>
+  {% endif %}
+</div>

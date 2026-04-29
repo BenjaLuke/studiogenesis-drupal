@@ -1,0 +1,22 @@
+uuid: e7a1ce76-2d66-4173-a8d3-11a7d28e0cd0
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - studiogenesis_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: studiogenesis_theme_content
+theme: studiogenesis_theme
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

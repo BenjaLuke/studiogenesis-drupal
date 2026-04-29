@@ -1,0 +1,23 @@
+name: Studiogenesis Theme
+type: theme
+description: Tema personalizado para la prueba Drupal de Studiogenesis.
+core_version_requirement: ^11
+base theme: stable9
+logo: logo.jpg
+
+# Cargamos Bootstrap 4 y la capa visual propia del proyecto.
+libraries:
+  - studiogenesis_theme/global
+
+# Las regiones son las zonas donde Drupal podra colocar bloques desde la interfaz.
+regions:
+  header: Cabecera
+  primary_menu: Menu principal
+  secondary_menu: Menu secundario
+  breadcrumb: Migas de pan
+  highlighted: Destacado
+  help: Ayuda
+  content: Contenido
+  sidebar_first: Barra lateral izquierda
+  sidebar_second: Barra lateral derecha
+  footer: Pie de pagina

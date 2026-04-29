@@ -99,3 +99,18 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - El CSV usa separador `;` para facilitar la apertura en Excel.
 - Se reviso el permiso propio `Administrar newsletter de Studiogenesis`.
 - Se exporto la configuracion para registrar que el modulo queda habilitado.
+
+## Punto 11 - Tema visual y Bootstrap 4
+
+- Se creo el tema personalizado `studiogenesis_theme`.
+- El tema usa `stable9` como tema base de Drupal.
+- Se incluyo Bootstrap 4.6.2 localmente dentro del tema para no depender de CDN.
+- Se creo una plantilla principal `page.html.twig` con cabecera, menu, contenido, laterales y pie.
+- Se creo una hoja de estilos propia para cabecera, menus, formularios, tablas y filtros de Views.
+- Se activo el tema `Studiogenesis Theme` como tema predeterminado.
+- Se recolocaron bloques del tema desde la interfaz de Drupal.
+- Se sustituyo el logo provisional por el logo real de Studiogenesis.
+- Se ajusto la paleta visual al azul del logo.
+- Se limpiaron etiquetas tecnicas de los filtros expuestos en las vistas de noticias y productos.
+- Se reviso el comportamiento responsive basico en noticias, productos y newsletter.
+- Se exporto la configuracion del tema, bloques y vistas a `config/sync`.

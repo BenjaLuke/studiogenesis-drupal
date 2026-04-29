@@ -1,0 +1,21 @@
+uuid: 0e15111c-d982-4610-bde3-15a86f5511d3
+langcode: es
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - studiogenesis_theme
+id: studiogenesis_theme_formulariodebusqueda
+theme: studiogenesis_theme
+region: header
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulario de búsqueda'
+  label_display: visible
+  provider: search
+  page_id: null
+visibility: {  }
