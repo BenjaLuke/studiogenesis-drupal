@@ -1,0 +1,5 @@
+name: Studiogenesis Newsletter
+type: module
+description: Gestiona las suscripciones publicas a la newsletter del proyecto.
+package: Studiogenesis
+core_version_requirement: ^11

@@ -1,0 +1,39 @@
+studiogenesis_newsletter.subscription_form:
+  path: '/newsletter'
+  defaults:
+    _form: '\Drupal\studiogenesis_newsletter\Form\NewsletterSubscriptionForm'
+    _title: 'Newsletter'
+  requirements:
+    _permission: 'access content'
+
+studiogenesis_newsletter.admin_list:
+  path: '/admin/content/newsletter'
+  defaults:
+    _controller: '\Drupal\studiogenesis_newsletter\Controller\NewsletterAdminController::list'
+    _title: 'Suscriptores de newsletter'
+  requirements:
+    _permission: 'administer studiogenesis newsletter'
+
+studiogenesis_newsletter.edit:
+  path: '/admin/content/newsletter/{subscription}/edit'
+  defaults:
+    _form: '\Drupal\studiogenesis_newsletter\Form\NewsletterSubscriptionEditForm'
+    _title: 'Editar suscriptor'
+  requirements:
+    _permission: 'administer studiogenesis newsletter'
+
+studiogenesis_newsletter.delete:
+  path: '/admin/content/newsletter/{subscription}/delete'
+  defaults:
+    _form: '\Drupal\studiogenesis_newsletter\Form\NewsletterSubscriptionDeleteForm'
+    _title: 'Eliminar suscriptor'
+  requirements:
+    _permission: 'administer studiogenesis newsletter'
+
+studiogenesis_newsletter.export:
+  path: '/admin/content/newsletter/export'
+  defaults:
+    _controller: '\Drupal\studiogenesis_newsletter\Controller\NewsletterAdminController::exportCsv'
+    _title: 'Exportar suscriptores'
+  requirements:
+    _permission: 'administer studiogenesis newsletter'

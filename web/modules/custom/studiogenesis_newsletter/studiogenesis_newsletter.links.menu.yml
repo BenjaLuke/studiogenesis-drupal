@@ -1,0 +1,13 @@
+studiogenesis_newsletter.subscription_form:
+  title: 'Newsletter'
+  route_name: studiogenesis_newsletter.subscription_form
+  menu_name: main
+  weight: 30
+
+studiogenesis_newsletter.admin_list:
+  title: 'Suscriptores de newsletter'
+  description: 'Consulta las personas suscritas a la newsletter.'
+  route_name: studiogenesis_newsletter.admin_list
+  parent: system.admin_content
+  menu_name: admin
+  weight: 20

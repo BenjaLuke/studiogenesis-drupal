@@ -82,3 +82,20 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - Se anadieron enlaces a `Noticias` y `Productos` en el menu principal.
 - Se reviso el buscador global del sitio y se ejecuto cron para indexar el contenido.
 - Se exporto la configuracion de las vistas a `config/sync`.
+
+## Punto 10 - Newsletter
+
+- Se creo el modulo personalizado `studiogenesis_newsletter`.
+- Se definio una tabla propia `studiogenesis_newsletter_subscription` para guardar suscripciones.
+- La tabla guarda nombre, apellidos, email, interes, aceptacion de privacidad, estado y fechas.
+- Se creo el formulario publico `/newsletter`.
+- El formulario valida email, exige aceptacion de privacidad e impide emails duplicados.
+- Se creo el listado administrativo `/admin/content/newsletter`.
+- El listado muestra suscriptores con estado, interes y fecha de alta.
+- Se anadieron operaciones administrativas para editar y eliminar suscriptores.
+- La edicion impide usar un email que ya pertenezca a otra suscripcion.
+- El borrado exige confirmacion antes de eliminar el registro.
+- Se creo la exportacion CSV en `/admin/content/newsletter/export`.
+- El CSV usa separador `;` para facilitar la apertura en Excel.
+- Se reviso el permiso propio `Administrar newsletter de Studiogenesis`.
+- Se exporto la configuracion para registrar que el modulo queda habilitado.

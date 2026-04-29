@@ -1,0 +1,4 @@
+administer studiogenesis newsletter:
+  title: 'Administrar newsletter de Studiogenesis'
+  description: 'Permite consultar, editar, eliminar y exportar suscriptores de la newsletter.'
+  restrict access: true
