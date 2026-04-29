@@ -1,15 +1,15 @@
-# Operating system
+# Sistema operativo
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# Editors
+# Editores
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Environment files
+# Archivos de entorno local
 .env
 .env.*
 !.env.example
@@ -26,7 +26,7 @@ composer.lock.bak
 /web/profiles/contrib/
 /web/themes/contrib/
 
-# Drupal generated files
+# Archivos generados por Drupal
 /web/sites/*/files/
 /web/sites/*/private/
 /web/sites/*/settings.php
@@ -35,23 +35,27 @@ composer.lock.bak
 /web/sites/*/services.local.yml
 /web/sites/*/phpunit.xml
 
-# Drupal temporary and backup files
+# Archivos temporales y copias de seguridad de Drupal
 *.orig
 *.rej
 *.bak
 *.tmp
 
-# Logs and cache
+# Logs y cache
 *.log
 .cache/
 
-# Docker local overrides
+# Sobrescrituras locales de Docker
 docker-compose.override.yml
 
-# Test and coverage output
+# Resultados de pruebas y cobertura
 /coverage/
 /.phpunit.result.cache
 
-# Local database tool files
+# Archivos locales de base de datos
 *.sqlite
 *.sqlite3
+
+# Exportaciones SQL locales.
+# Se incluiran en el ZIP final si procede, pero no se publican en GitHub.
+/database/*.sql

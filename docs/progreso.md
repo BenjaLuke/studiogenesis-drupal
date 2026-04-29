@@ -58,3 +58,11 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - Se reviso la presentacion del formulario para ordenar los campos de edicion.
 - Se reviso la presentacion publica inicial de ambos tipos de contenido.
 - Se exporto la configuracion Drupal a `config/sync` para versionar el modelo en Git.
+
+## Punto 8 - Contenido de prueba
+
+- Se crearon 3 noticias publicadas con categorias y fechas distintas.
+- Se crearon 3 productos publicados con categorias, descripciones, fotos y tarifas.
+- Se comprobo que existen 3 productos con foto asociada.
+- Se genero una exportacion SQL preliminar local en `database/studiogenesis_drupal_preliminar.sql`.
+- La exportacion SQL queda ignorada por Git porque el repositorio de GitHub es publico.

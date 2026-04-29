@@ -84,6 +84,8 @@ El archivo `web/sites/default/settings.php` y la carpeta `web/sites/default/file
 
 La configuracion estructural de Drupal se exporta en `config/sync`. Ahi quedan versionados vocabularios, tipos de contenido, campos, formularios, presentaciones y modulos activos.
 
+Las exportaciones SQL locales se guardan en `database/`, pero estan ignoradas por Git para no publicar datos de la base de datos en el repositorio publico.
+
 Si Drupal no puede importar traducciones o guardar archivos generados, revisar permisos de la carpeta publica de archivos:
 
 ```powershell
@@ -116,4 +118,4 @@ Root password: root
 
 ## Estado
 
-Fase actual: modelo de datos de noticias y productos creado y exportado a configuracion.
+Fase actual: contenido de prueba inicial creado para noticias, productos y medios.
