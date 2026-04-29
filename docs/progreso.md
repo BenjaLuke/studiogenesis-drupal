@@ -66,3 +66,19 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - Se comprobo que existen 3 productos con foto asociada.
 - Se genero una exportacion SQL preliminar local en `database/studiogenesis_drupal_preliminar.sql`.
 - La exportacion SQL queda ignorada por Git porque el repositorio de GitHub es publico.
+
+## Punto 9 - Listados publicos con Views
+
+- Se creo la vista `Noticias` en la ruta `/noticias`.
+- La vista de noticias muestra titulo, fecha de noticia, subtitulo, categoria y autor.
+- Las noticias se ordenan por `Fecha noticia` en orden descendente.
+- Se anadio un filtro expuesto por categoria para que el visitante pueda filtrar noticias.
+- Se anadio un buscador expuesto por titulo dentro del listado de noticias.
+- Se creo la vista `Productos` en la ruta `/productos`.
+- La vista de productos muestra titulo, categoria, descripcion corta y tarifa.
+- Los productos se ordenan alfabeticamente por titulo.
+- Se anadio un filtro expuesto por categoria para que el visitante pueda filtrar productos.
+- Se anadio un buscador expuesto por titulo dentro del listado de productos.
+- Se anadieron enlaces a `Noticias` y `Productos` en el menu principal.
+- Se reviso el buscador global del sitio y se ejecuto cron para indexar el contenido.
+- Se exporto la configuracion de las vistas a `config/sync`.
