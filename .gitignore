@@ -52,6 +52,9 @@ docker-compose.override.yml
 /coverage/
 /.phpunit.result.cache
 
+# Paquetes locales de entrega
+/dist/
+
 # Archivos locales de base de datos
 *.sqlite
 *.sqlite3

@@ -100,7 +100,7 @@ docker compose exec app chown -R www-data:www-data web/sites/default/files
 - Zona horaria: `Europe/Madrid`.
 - Nombre del sitio: `Studiogenesis Drupal`.
 - Slogan: `Noticias, productos y newsletter`.
-- Tema publico provisional: Olivero.
+- Tema publico: `Studiogenesis Theme`.
 - Tema de administracion: Claro.
 - Modulos base revisados: campos, ficheros, imagenes, taxonomias, buscador, vistas y menus.
 - Modulos multimedia activados: Media y Media Library.
@@ -118,4 +118,36 @@ Root password: root
 
 ## Estado
 
-Fase actual: contenido de prueba inicial creado para noticias, productos y medios.
+Fase actual: proyecto funcional preparado para entrega.
+
+Funcionalidades principales:
+
+- Pagina de inicio personalizada para la revision de la prueba.
+- Listado publico de noticias en `/noticias`, con filtros y buscador.
+- Listado publico de productos en `/productos`, con filtros y buscador.
+- Buscador global de Drupal indexado.
+- Formulario publico de newsletter en `/newsletter`.
+- Administracion de newsletter en `/admin/content/newsletter`.
+- Exportacion CSV de suscriptores en `/admin/content/newsletter/export`.
+- Tema personalizado `studiogenesis_theme` basado en Bootstrap 4.
+- Configuracion Drupal exportada en `config/sync`.
+- Exportacion SQL final local en `database/studiogenesis_drupal_final_2026-04-29.sql`.
+
+La carpeta `database/` esta ignorada por Git porque puede contener datos de contenido y suscripciones. El SQL final debe incluirse en el ZIP de entrega, no subirse al repositorio publico.
+
+## Entrega
+
+La documentacion de entrega vive en:
+
+```text
+docs/entrega.md
+docs/progreso.md
+docs/modelo-datos.md
+docs/newsletter.md
+docs/contenido-prueba.md
+```
+
+Credenciales de administracion:
+
+- Usuario local: `admin`.
+- Contrasena: facilitar por canal privado o en documentacion privada de entrega, no en el repositorio publico.

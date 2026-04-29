@@ -114,3 +114,15 @@ Este documento resume las decisiones y avances principales del proyecto. Sirve c
 - Se limpiaron etiquetas tecnicas de los filtros expuestos en las vistas de noticias y productos.
 - Se reviso el comportamiento responsive basico en noticias, productos y newsletter.
 - Se exporto la configuracion del tema, bloques y vistas a `config/sync`.
+
+## Punto 12 - Preparacion de entrega
+
+- Se reviso que Drupal arranca correctamente con Docker Compose.
+- Se comprobo que el tema activo es `studiogenesis_theme`.
+- Se comprobo que PHP/GD tiene soporte WebP para generar imagenes derivadas.
+- Se revisaron rutas publicas principales: inicio, noticias, productos y newsletter.
+- Se reviso que la administracion de newsletter no queda expuesta a usuarios anonimos.
+- Se exporto la configuracion final de Drupal a `config/sync`.
+- Se genero la exportacion SQL final en `database/studiogenesis_drupal_final_2026-04-29.sql`.
+- Se creo `docs/entrega.md` con rutas, funcionalidades, exportaciones y capturas recomendadas.
+- Se actualizo el `README.md` con el estado final del proyecto.
